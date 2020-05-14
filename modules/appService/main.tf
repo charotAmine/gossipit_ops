@@ -1,7 +1,7 @@
 resource "azurerm_app_service_plan" "appServicePlan" {
   name                = var.appServicePlanName
   location            = var.rgLocation
-  resource_group_name = avar.rgName
+  resource_group_name = var.rgName
 
   sku {
     tier = "Standard"
