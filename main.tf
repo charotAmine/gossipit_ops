@@ -19,3 +19,17 @@ resource "azurerm_resource_group" "gossipIt" {
   name     = "mygoosiprg"
   location = "EAST US"
 }
+
+module "webapp" {
+    
+  source = "./modules/appService"
+
+  appServicePlanName = "aspgoosip01"
+
+  appServiceName = "webappgoosip01"
+
+  rgName = azurerm_resource_group.gossipIt.name
+
+  rgLocation = azurerm_resource_group.gossipIt.location
+  
+}
